@@ -1,0 +1,16 @@
+= Ethereum Network Dashboard Service
+
+This is a docker-compose config that wraps https://github.com/cubedro/eth-netstats dashboard alongside with
+it's backend https://github.com/cubedro/eth-net-intelligence-api.
+
+WARNING: not for production use
+
+== Configuration
+You need to setup at least one node address. To do this set node IP or domain name in `monitor/app.json` file as
+`env/RPC_HOST` param. There are also another params which you probably have to adjust to match your node values.
+
+== Up & Down
+If you have `make` tool installed on your system, you could use the following shortcuts:
+
+* make up
+* make down
