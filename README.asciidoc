@@ -12,5 +12,5 @@ You need to setup at least one node address. To do this set node IP or domain na
 == Up & Down
 If you have `make` tool installed on your system, you could use the following shortcuts:
 
-* make up
-* make down
+* `make up`
+* `make down`
