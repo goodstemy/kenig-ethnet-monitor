@@ -1,4 +1,4 @@
-= Ethereum Network Dashboard Service
+= Kenig ethnet monitor
 
 This is a docker-compose config that wraps https://github.com/cubedro/eth-netstats dashboard alongside with
 it's backend https://github.com/cubedro/eth-net-intelligence-api.
