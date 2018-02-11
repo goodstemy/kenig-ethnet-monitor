@@ -17,6 +17,33 @@ services:
     networks:
       - app_net
 
+  explorer:
+    image: goodstemy/explorer
+    ports:
+      - 3002:3000
+    depends_on:
+      - explorer-grabber
+      - mongo
+    networks:
+      - backend
+
+  explorer-grabber:
+    image: goodstemy/explorer-grabber
+    depends_on:
+      - mongo
+    networks:
+      - backend
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/blockDB
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
 
 networks:
   app_net:
@@ -25,3 +52,5 @@ networks:
       driver: default
       config:
       - subnet: 172.16.1.1/24
+  backend:
+    driver: "bridge"
