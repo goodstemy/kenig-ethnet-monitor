@@ -26,6 +26,8 @@ services:
       - mongo
     networks:
       - backend
+    env_file:
+      - ./common.env
 
   explorer-grabber:
     image: goodstemy/explorer-grabber
@@ -33,8 +35,8 @@ services:
       - mongo
     networks:
       - backend
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/blockDB
+    env_file:
+      - ./common.env
 
   mongo:
     image: mongo:latest
