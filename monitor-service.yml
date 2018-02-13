@@ -25,7 +25,7 @@ services:
       - explorer-grabber
       - mongo
     networks:
-      - backend
+      - app_net
     env_file:
       - ./common.env
 
@@ -34,7 +34,7 @@ services:
     depends_on:
       - mongo
     networks:
-      - backend
+      - app_net
     env_file:
       - ./common.env
 
@@ -45,7 +45,7 @@ services:
     volumes:
       - ./data:/data/db
     networks:
-      - backend
+      - app_net
 
 networks:
   app_net:
@@ -54,5 +54,3 @@ networks:
       driver: default
       config:
       - subnet: 172.16.1.1/24
-  backend:
-    driver: "bridge"
