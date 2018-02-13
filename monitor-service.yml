@@ -28,6 +28,8 @@ services:
       - app_net
     env_file:
       - ./common.env
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/blockDB
 
   explorer-grabber:
     image: goodstemy/explorer-grabber
@@ -37,6 +39,8 @@ services:
       - app_net
     env_file:
       - ./common.env
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/blockDB
 
   mongo:
     image: mongo:latest
